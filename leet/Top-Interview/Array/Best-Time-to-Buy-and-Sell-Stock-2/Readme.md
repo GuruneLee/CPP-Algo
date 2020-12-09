@@ -9,7 +9,7 @@ profit  = SUM( Peak[i] + Valley[i] )
 
 ## Source Code
 ### Peak(극대) / Valley(극소) 골라서 다 더하기
-"""
+~~~
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
@@ -32,10 +32,10 @@ public:
         return p;
     }
 };
-"""
+~~~
 
 ### 증가함수 일 때만 다 더하기 (not mine)
-"""
+~~~
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
@@ -50,4 +50,4 @@ public:
         return profit;
     }
 };
-"""
+~~~
