@@ -10,7 +10,7 @@ https://leetcode.com/problems/rotate-array/discuss/54277/Summary-of-C%2B%2B-solu
 
 ## Source Code
 ### 1. Using Extra Array
-"""
+~~~
 class Solution {
     public void rotate(vector<int>& nums, int k) {
             vector<int> n(nums.size());
@@ -21,9 +21,9 @@ class Solution {
     }
 }
 
-"""
+~~~
 ### 2. Brute Force (Time Exceeded)
-"""
+~~~
 class Solution {
   public void rotate(int[] nums, int k) {
     // speed up the rotation
@@ -40,9 +40,9 @@ class Solution {
   }
 }
 
-"""
+~~~
 ### 3. Cyclic Replacements (미완성 33/35)
-"""
+~~~
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
@@ -80,4 +80,4 @@ public:
         
     }
 };
-"""
+~~~
