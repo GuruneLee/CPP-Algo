@@ -20,12 +20,12 @@ bool solution(vector<string> phone_book) {
         m[s] = 0;
         string ap = "";
         for (int i=0; i<s.size(); i++) {
-            ""char ts = s[i];
+            **char ts = s[i];
             ap.append(1, ts); //문자를 추가할 때는 개수를 같이 기입해야 함
             if (m[ap] == 1) { //map을 사용하지 않으면 find()함수를 사용해야 함
                 answer = false;
                 return answer;
-            }""
+            }**
         }
         m[s] = 1;
     }
