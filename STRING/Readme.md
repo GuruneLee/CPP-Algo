@@ -1,6 +1,6 @@
 # STRING
 
-## <string> 함수들
+## &#60;string&#62; 함수들
 http://www.tcpschool.com/cpp/cpp_string_stringMethod
 
 ### append()
@@ -38,7 +38,7 @@ http://www.tcpschool.com/cpp/cpp_string_stringMethod
 3. **long long stoll(string& s)**
 4. **flout stof(string& s)**
 
-## <algorithm> 함수들
+## &#60;algorithm&#62; 함수들
 ### std::reverse()
 **std::reverse(BidirectionalIterator first, BidirectionalIterator last);**
 ~~~
