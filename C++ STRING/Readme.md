@@ -1,4 +1,5 @@
 # STRING
+- string의 마지막 문자는 null임. index는 s.size()... ㅋ
 
 ## &#60;string&#62; 함수들
 http://www.tcpschool.com/cpp/cpp_string_stringMethod
