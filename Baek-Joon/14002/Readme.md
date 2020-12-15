@@ -1,4 +1,5 @@
-# 가장 긴 증가하는 부분수열
+# 가장 긴 증가하는 부분수열 04
+https://www.acmicpc.net/problem/14002
 
 ## Solution
 **1. O(n^2)**

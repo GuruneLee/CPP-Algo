@@ -1,4 +1,5 @@
 # 가장 긴 증가하는 부분수열
+https://www.acmicpc.net/problem/11053
 
 ## Solution
 **1. O(n^2)**
