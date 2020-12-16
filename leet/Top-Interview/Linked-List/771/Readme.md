@@ -1,5 +1,5 @@
 # Merge Two Sorted Lists
-https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/771/ 
+https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/771/
 
 ## Solution
 merge sort랑 똑같이 하면 됨
