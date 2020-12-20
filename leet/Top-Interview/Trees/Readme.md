@@ -2,7 +2,7 @@
 
 ## Tree Traversal  
 <img width="300" height="400" src="./treetraversal.png">
-~~~
+"""
 void traversal(node){
   if(node){
     //visit(node); preorder
@@ -12,4 +12,4 @@ void traversal(node){
     //visit(node); postorder
   }
 }
-~~~
+"""
