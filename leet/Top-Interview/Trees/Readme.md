@@ -1,8 +1,7 @@
 # Tree
 
 ## Tree Traversal  
-![Tree Traversal](./treetraversal.png){: width="300" height="400"}
-
+<img width="300" height="400" src="./treetraversal.png">
 ~~~
 void traversal(node){
   if(node){
