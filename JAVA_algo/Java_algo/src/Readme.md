@@ -83,7 +83,7 @@ BufferedReader는 throws Exception을 선언해 줘야 에러 없이 사용가능하기 때문에, S
 ~~~
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 int N = Integer.parseInt(br.readLine());
-StringTokenizer st = new StringTokenizer(br.readLine());
+StringTokenizer st = new StringTokenizer(br.readLine()," ");
 	for (int i = 0; i < N; i++) {
 		p[i] = Integer.parseInt(st.nextToken());
 }
@@ -110,3 +110,42 @@ https://joooootopia.tistory.com/13  .
 1. 클래스는 무조건 'Main'  
 2. 입출력 선언은 한 번에 -> BufferedReader와 BufferedWriter는 맨 위에 넣자  
 3. 패키지 이름 제거하기  
+
+## next permutation(다음 순열) 직접 구현하기
+step1. Find largest index i s.t. list[i-1]<list[j]  
+step2. Find largest index j s.t. j>=i and list[j] > list[i-1]  
+step3. Swap list[j] and list[i-1]  
+step4. Reverse the suffix starting at list[i]  
+~~~
+boolean nextPermutation(int[] arr) {
+	total++;
+	// step1
+	int i=N-1;
+	while( i>0 && arr[i-1] >= arr[i] ) --i; 
+	if(i==0) return false;
+	
+	//step2
+	int j = N-1;
+	while(arr[i-1]>=arr[j]) --j;
+	
+	//step3
+	int temp = input[i-1];
+	input[i-1] = input[j];
+	input[j] = temp;
+	
+	//step4
+	int k = N-1;
+	while(i<k) {
+	    temp=input[i];
+		input[i]=input[k];
+		input[k]=temp;
+		++i; --k;
+	}
+	return true;		
+}
+~~~
+
+## java의 변수는 primitive / reference 두가지
+- primitive: boolean , byte , char , short , int , long , float double  
+- reference: 그 외 전부 (class 포함)  
+매개변수로 넘길때 call-by-value인지 ref인지도 변수의 종류로 결정.   
