@@ -74,4 +74,39 @@ try {
 `InputStreamReader`는 입력을 character로 읽어들임.  
 `BufferedReader`는 InputStreasmReader에 버퍼링 기능 추가한 것. 버퍼에 보관했다가, 사용자가 원할때, 읽어오게 한다.  
 BufferedReader는 throws Exception을 선언해 줘야 에러 없이 사용가능하기 때문에, Scanner보다 손이 훨씬 많이 가지만, **속도가 훨씬 빠르다**  
+  
+### BufferedReader를 이용한 입력 받기 실전
+예를 들어  
+|6  
+|4 2 6 3 1 5  
+이런식의 입력을 BufferedReader로 받기 위해선
+~~~
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+int N = Integer.parseInt(br.readLine());
+StringTokenizer st = new StringTokenizer(br.readLine());
+	for (int i = 0; i < N; i++) {
+		p[i] = Integer.parseInt(st.nextToken());
+}
+~~~   
+이렇게 `StringTokenizer`를 이용하면 됨 + `nextToken()`  
+(아, br.readLine은 무조건 string리턴임 ㅋ)  
 
+### BufferedWriter를 이용한 출력 실전
+기본적인 순서는  
+| bw에 담기 -> 출력  순서다.  
+bw에는 아스키코드가 들어가기 때문에, 정수가 아니라 char[]와 string으로 넣어줘야 제대로 나온다  
+~~~
+bw.write(String.valueof(n)); //valueof 사용
+bw.write(Integer.toString(c)); //toString 사용
+  
+bw.flush(); //출력
+~~~
+
+
+## 자료구조
+https://joooootopia.tistory.com/13  .
+
+## 백준 컴파일/런타임 에러 지점
+1. 클래스는 무조건 'Main'  
+2. 입출력 선언은 한 번에 -> BufferedReader와 BufferedWriter는 맨 위에 넣자  
+3. 패키지 이름 제거하기  
