@@ -1,9 +1,10 @@
-// NxM크기의 연구소
+// NxM크기의 연구소 (in range [3,8])
 // 바이러스의 확산을 막기 위한 벽 - 바이러스는 2에서 상하좌우로 확산
 // 0 빈칸, 1벽, 2바이러스
 // 세워야 하는 벽은 총 3개
 // 안전영역=바이러스가 퍼질 수 없는 곳
 // 안전영역의 최대값을 구하여라
+
 #include <iostream>
 #include <vector>
 #include <queue>
@@ -13,6 +14,8 @@
 using namespace std;
 int dx[] = {-1,1,0,0};
 int dy[] = {0,0,1,-1};
+
+//벽을 실제로 놓고, 직접 바이러스 퍼뜨려서, 안전지대 세보자!
 int main() {
     int n,m;
     cin >> n >> m;
@@ -48,6 +51,7 @@ int main() {
             }
         }
 
+        //바이러스 퍼뜨리기
         queue<pair<int,int>> q(vir);
         while (!q.empty()) {
             int cx = q.front().first;
@@ -82,3 +86,7 @@ int main() {
     cout << result << endl;
     return 0;
 }
+
+//시간 복잡도는 O(N^4)인데
+//N이 매우 작아서 가능한 풀이 !
+//-컴퓨터는 1초에 약 1억번의 연산

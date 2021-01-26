@@ -1,6 +1,9 @@
 # STRING
-- string의 마지막 문자는 null임. index는 s.size()... ㅋ
-
+- **string의 마지막 문자는 null임. index는 s.size()... ㅋ**
+- character의 범위 (ASCII)
+    - 'a'~'z': 97~122
+    - 'A'~'Z': 65~90
+    - '0'~'9': 48~57
 ## &#60;string&#62; 함수들
 http://www.tcpschool.com/cpp/cpp_string_stringMethod
 
@@ -31,7 +34,13 @@ http://www.tcpschool.com/cpp/cpp_string_stringMethod
 
 ### replace()
 **문자열.replace(대체할문자열의시작위치, 대체할문자열의길이, 새로운문자열);** 
-: 전달된 시작 위치부터 문자열의 길이만큼을 제거한 후에, 새로운 문자열을 삽입함.
+: 전달된 시작 위치부터 문자열의 길이만큼을 제거한 후에, 새로운 문자열을 삽입함
+
+### substr()
+1. s.substr(int pos);
+: pos부터 끝 까지 string으로 반환
+2. s.substr(int pos, int count);
+: [pos, pos+count) string으로 반환
 
 ### 문자열 <-> 숫자 함수들
 1. **string to_string(int val);**
