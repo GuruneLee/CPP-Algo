@@ -11,5 +11,5 @@ https:www.acmicpc.net/problem/12865
     - dp[i-1][W]. 같은 제한의 i-1번째까지 고려했을 때랑 value가 같다
 - if i번째 무게가 제한W 보다 작으면 (i번째를 어떻게든 넣을 수 있으면)
     - dp[i-1][W-w[i]] + v[i]. i번째 물건 넣었을 때 value와
-    - dp[i-1][W]. 그냥 i번째거 안넣었을 때 value 중 최대값
+    - dp[i-1][W]. 그냥 i번째거 안넣었을 때 value 중 최대값  
 [reference](https://gsmesie692.tistory.com/113)  
