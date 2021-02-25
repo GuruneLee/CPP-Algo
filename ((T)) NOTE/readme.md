@@ -154,9 +154,9 @@ int main(){
 - string.size()의 경우, null앞까지의 개수를 새줌
 ### ASCII
 - 값을 몰라도 되지만, 혹시 모르니깐
-    - 'a'~'z': 97~122
-    - 'A'~'Z': 65~90
-    - '0'~'9': 48~57
+    - 'a'\~'z': 97\~122
+    - 'A'\~'Z': 65\~90
+    - '0'\~'9': 48\~57
 ### append
 1. **문자열.append(추가할문자열);**               
 : 추가할 문자열을 맨 끝에 추가함.
@@ -194,7 +194,7 @@ int main(){
 4. flout stof(string& s)
 ### reverse
 - 이건 \<algorithm\>에 있는 함수
-- string뿐 아니라 대부분의 container에도 쓸 수 있음
+- string뿐 아니라 대부분의 container에도 쓸 수 있음  
 **std::reverse(BidirectionalIterator first, BidirectionalIterator last);**
 ~~~
 string str = "abcd"
@@ -629,8 +629,8 @@ void uion_parent(int a, int b) {
     }
     ~~~
 
-### 크루스칼 알고리즘 (Kruskal Algorithm)
-: **최소 신장 트리(minimum spanning tree)**를 만드는 방법.
+### 크루스칼 알고리즘 (Kruskal Algorithm)  
+**최소 신장 트리(minimum spanning tree)**를 만드는 방법.
 - 시간 복잡도
     - O(ElogE)
 - 프로세스
