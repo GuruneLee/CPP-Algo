@@ -748,6 +748,40 @@ ex. 선수과목을 고려한 학습 순서 결정
     ~~~
 
 ## 기타 중요 알고리즘
+### 아라토스테네스의 체
+- 소수 판별하기
+1. 2부터 N까지의 모든 자연수를 나열한다
+2. 남은 수 중에서 아직 처리하지 않은 가장 작은 수 i를 찾는다
+3. 남은 수 중에서 i를 제외한 i의 배수를 제거한다
+4. `2`, `3`을 반복한다
+~~~cpp
+bool isPrime[1000001];
+int solution(int n) {
+    int cnt = 0;
+    
+    for (int i=0; i<n+1; i++) {
+        isPrime[i] = true; //다 소수라고 초기화하기
+    }
+    
+    for (int i=2; i*i<n+1; i++) {
+        if (isPrime[i]) {//제외되지 않은 가장 작은 수
+            int j = 2; //i의 배수들을 모두 소수에서 제외하기
+            while (i*j <= n) {
+                isPrime[i*j] = false;
+                j++;
+            }
+        }
+    }
+
+    for (int i=2; i<n+1; i++) {
+        if (isPrime[i]) cnt++;
+    }
+    
+    //개수 출력하기
+    return cnt;
+}
+~~~
+
 ### LIS (Longest Increased Subsequence)
 #### LIS길이 구하기
 1. O(n^2)  짜리 방법
