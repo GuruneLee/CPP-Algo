@@ -157,6 +157,27 @@ int main(){
     - 'a'\~'z': 97\~122
     - 'A'\~'Z': 65\~90
     - '0'\~'9': 48\~57
+### isdigit, isalpha
+- bool isdigit(int c)
+: c가 '0'~'9'면 true, 아니면 false
+### split
+- 내장 함수가 없어 직접 구현함
+~~~cpp
+#include <vector>
+#include <sstream>
+
+vector<string> split(string input, char delimiter) {
+    vector<string> answer;
+    stringstream ss(input);
+    string temp;
+ 
+    while (getline(ss, temp, delimiter)) {
+        answer.push_back(temp);
+    }
+ 
+    return answer;
+}
+~~~
 ### append
 1. **문자열.append(추가할문자열);**               
 : 추가할 문자열을 맨 끝에 추가함.
