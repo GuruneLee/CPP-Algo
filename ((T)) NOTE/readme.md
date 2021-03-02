@@ -158,8 +158,17 @@ int main(){
     - 'A'\~'Z': 65\~90
     - '0'\~'9': 48\~57
 ### isdigit, isalpha
+- #include \<cctype\>
 - bool isdigit(int c)
 : c가 '0'~'9'면 true, 아니면 false
+### toupper, tolower
+- #include \<cctype\>
+- int toupper(int c)
+    - 소문자만 대문자로 변경해줌. 다른 문자는 그대로 반환
+- int tolower(int c)
+    - 대문자만 소문자로 변경해줌. 다른 문자는 그대로 반환
+
+
 ### split
 - 내장 함수가 없어 직접 구현함
 ~~~cpp
