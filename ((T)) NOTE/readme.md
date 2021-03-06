@@ -219,9 +219,21 @@ vector<string> split(string input, char delimiter) {
 : [pos, pos+count) string으로 반환
 ### string<->num
 1. string to_string(int val);
+    - to_string(float f): 이건 되도록이면 쓰지말고, sstream을 이용한 함수를 만들어서 쓰자
+    ~~~cpp
+    #include <sstream>
+    #include <string>
+    string to_string_f(float f) {
+        stringstream sstream;
+        sstream << f;
+        string num_str = sstream.str();
+        return num_str;
+    }
+    ~~~
 2. int stoi(string& s)
 3. long long stoll(string& s)
 4. flout stof(string& s)
+    - 소수점 관련된건 무조건 에러나니깐 문제에 맞게 직접 다시짜서 만들자
 ### reverse
 - 이건 \<algorithm\>에 있는 함수
 - string뿐 아니라 대부분의 container에도 쓸 수 있음  
