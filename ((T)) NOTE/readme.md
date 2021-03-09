@@ -85,6 +85,8 @@ int myLowerBound(int arr[], int target, int size) {
             start = mid+1;
         }
     }
+
+    return end;
 }
 ~~~
 
@@ -121,6 +123,8 @@ int myUpperBound(int arr[], int target, int size) {
             start = mid+1;
         }
     }
+
+    return end;
 }
 ~~~
 
