@@ -1,4 +1,6 @@
 # 가사검색
+https://programmers.co.kr/learn/courses/30/lessons/60060
+
 - 특정 키워드가 가사에 몇개 있는지 검색
 - '?'포함된 문자열 -> 어떤 문자에도 매칭되는 와일드 카드
 - 가사에 사용된 단어배열 `words`, 찾고싶은 키워드가 담긴 `queries`배열
@@ -10,6 +12,7 @@
     - sum(words[i]) < 1,000,000
     - 오직 소문자 알파벳으로 구성
     - `?`개수는 상관 없으나, 각 키워드의 접두사/접미사로 주어짐
+    
 ## Solution
 1. words를 사전순으로 정렬, words.reverse의 사전순으로 정렬
 2. upper, lower bound 찾기
