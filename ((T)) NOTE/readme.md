@@ -922,6 +922,50 @@ void backtrace(int idx, int len){
 }
 ~~~
 
+### 편집거리
+- A를 B로 만드는데 걸리는 최소 편집 수 (삭제, 추가, 교체)  
+~~~
+string A,B;
+dp[A.size][B.size]; //dp[0][i], dp[i][0]은 0부터 1씩 증가하는 정수로 채움
+
+for (A.size만큼)
+    for (B.size만큼)
+        if (A[i-1] == B[i-1]) //dp는 빈 스트링 부터 시작함
+            dp[i][j] = dp[i-1][j-1]
+        else 
+            dp[i][j] = 1 + min(dp[i-1][j], dp[i-1][j-1], dp[i][j-1])
+~~~
+
+### LCS (Longest Common Subsequence)
+- 최장 공통 부분 문자열 (부분수열) 길이 구하기  
+~~~
+string A,B;
+dp[A.size][B.size]; //dp[0][i], dp[i][0]은 0부터 1씩 증가하는 정수로 채움
+
+for (A.size)
+    for (B.size)
+        if (str2[i]== str1[j])
+            dp[i][j] = dp[i-1][j-1] + 1;
+        else 
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+~~~
+출처: https://twinw.tistory.com/126 [흰고래의꿈]
+
+### 냅색 알고리즘 (Knapsack, 배낭 문제)
+- n개의 물건 무게(W)와 가치(V)
+- 배낭 최대 무게 k  
+~~~
+dp[0~n][0~k] //dp[0][i], dp[i][0]은 0으로 채움
+             //dp[i][k] -> 견딜 수 있는 무게(k)에 따른 i번째 물건까지 고려한 총 가치의 합
+w[], v[];
+
+for (n만큼) //i
+    for (k만큼) //j
+        if (w[i] > j)
+            dp[i][j] = dp[i-1][j];
+        else 
+            dp[i][j] = max( dp[i-1][j], dp[i-1][j-w[i]+v[i]] );
+~~~
 
 
 # Code Convention
