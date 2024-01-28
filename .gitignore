@@ -1,3 +1,7 @@
+*
+!*.*
+!*/
+
 .vscode/settings.json
 codeup/.vscode/launch.json
 codeup/.vscode/settings.json
@@ -9,4 +13,5 @@ JAVA_algo/Java_algo/.settings/org.eclipse.jdt.core.prefs
 Baek-Joon/.project
 /.vscode/
 /.project/
-.vscode/settings.json
+
+*.dSYM/
