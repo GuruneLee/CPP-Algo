@@ -1,16 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 야매
 const int MX = 1000005;
-int dat[MX], pre[MX], nxt[MX];
+int dat[MX], pre[MX], nxt[MX]; // 0으로 초기화
 int unused = 1;
 
-void insert(int addr, int num){
-
+void insert(int addr, int num) {	//addr index다음에 num을 넣기
+	dat[unused] = num;		//새로운 원소 생성
+	pre[unused] = addr;		//새로운 원소의 이전은 addr
+	nxt[unused] = nxt[addr];//새로운 원소의 다음은 addr의 다음꺼
+	if(nxt[addr]!=-1) pre[nxt[addr]] = unused;//삽입할 위치의 nxt값과 다음원소의 pre값을 새원소로 변경  **if처리하기.
+	nxt[addr] = unused;		
+	unused++;
 }
 
-void erase(int addr){
-
+void erase(int addr) {
+	nxt[pre[addr]] = nxt[addr];
+	if(nxt[addr]!=-1) pre[nxt[addr]] = pre[addr];
+	pre[addr] = -1;
+	nxt[addr] = -1;
 }
 
 void traverse(){
@@ -49,7 +58,7 @@ void erase_test(){
 }
 
 int main(void) {
-  fill(pre, pre+MX, -1);
+  fill(pre, pre + MX, -1);
   fill(nxt, nxt+MX, -1);
   insert_test();
   erase_test();
