@@ -1,43 +1,61 @@
 // 회전하는 큐
 #include <iostream>
 #include <deque>
+#include <algorithm>
 
 using namespace std;
 
-int main() {
+int need[51];
+int findIndex(deque<int> &arr, int val) {
+    int idx = 0;
+    for (int i = 0; i < arr.size(); i++) {
+        if (arr[i]==val) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+int main()
+{
     int n, m;
     cin >> n >> m;
-
-    deque<int> needs;
-    int tmp;
-    int cur[51] = {};
-    for (int i = 0; i < m; i++)
-    {
-        cin >> tmp;
-        needs.push_back(tmp);
-        cur[tmp] = tmp;
-    }
 
     deque<int> dq;
     for (int i = 0; i < n; i++) {
         dq.push_back(i + 1);
     }
+    for (int i = 0; i < m;i++) {
+        cin >> need[i];
+    }
 
     int cnt = 0;
-    while (!needs.empty()) {
-        int dest = needs.front();
-        if (dest == dq.front()) { //
-            needs.pop_front();
-            dq.pop_front();
-        } else if (isLeft(cur[dest], dq.size())) {
-
+    for (int i = 0; i < m; i++)
+    {
+        int pos = findIndex(dq, need[i]);
+        while (dq.front() != need[i]){
+            if (pos < dq.size()-pos) {// 왼쪽
+                int tmp = dq.front();
+                dq.pop_front();
+                dq.push_back(tmp);
+            }
+            else
+            { // 오른쪽
+                int tmp = dq.back();
+                dq.pop_back();
+                dq.push_front(tmp);
+            }
+            cnt++;
         }
+        dq.pop_front();
     }
+
+    cout << cnt;
 }
 
-bool isLeft(int idx, int size) {
-    return idx < size/2;
-}
+// 0 1 2 3
+// 2 >= 4-2=2 오
+// 1 < 4-1=3 왼
 
-// 1 2 3 4 5 6 7 8 9 10
-//   1     3       2   
+// 0 1 2 3 4
+// 2 < 5-2=3 왼
